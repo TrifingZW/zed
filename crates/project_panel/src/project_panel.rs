@@ -5916,7 +5916,7 @@ impl ProjectPanel {
             .cursor_pointer()
             .rounded_none()
             .bg(bg_color)
-            .border_1()
+            .border_2()
             .border_r_2()
             .border_color(border_color)
             .hover(|style| style.bg(bg_hover_color).border_color(border_hover_color))
@@ -6480,7 +6480,7 @@ impl ProjectPanel {
                         .right(px(-0.5))
                         .py_1()
                         .px_2()
-                        .border_1()
+                        .border_2()
                         .border_color(color)
                         .bg(cx.theme().colors().background)
                         .child(
@@ -7432,7 +7432,7 @@ impl Render for ProjectPanel {
                                                             layout.offset.y * item_height + offset,
                                                         ),
                                                         size(
-                                                            px(1.),
+                                                            px(2.),
                                                             layout.length * item_height
                                                                 - offset * 2.,
                                                         ),
@@ -7515,7 +7515,7 @@ impl Render for ProjectPanel {
                                                                 layout.offset.y * item_height,
                                                             ),
                                                             size(
-                                                                px(1.),
+                                                                px(2.),
                                                                 layout.length * item_height,
                                                             ),
                                                         );

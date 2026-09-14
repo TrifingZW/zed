@@ -1294,7 +1294,7 @@ impl ConfigurationView {
                 .p_1()
                 .justify_between()
                 .rounded_md()
-                .border_1()
+                .border_2()
                 .border_color(cx.theme().colors().border_variant)
                 .bg(cx.theme().colors().background.opacity(0.5))
                 .child(
@@ -1343,7 +1343,7 @@ impl ConfigurationView {
                 .p_1()
                 .justify_between()
                 .rounded_md()
-                .border_1()
+                .border_2()
                 .border_color(cx.theme().colors().border_variant)
                 .bg(cx.theme().colors().background.opacity(0.5))
                 .child(

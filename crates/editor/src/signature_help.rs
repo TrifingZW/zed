@@ -3,7 +3,7 @@ use crate::hover_popover::open_markdown_url;
 use crate::{BufferOffset, Editor, EditorSettings, ToggleAutoSignatureHelp, hover_markdown_style};
 use gpui::{
     App, Context, Entity, HighlightStyle, MouseButton, ScrollHandle, Size, StyledText, Task,
-    TextStyle, Window, combine_highlights,
+    TextStyle, Window, combine_highlights, px,
 };
 use language::BufferSnapshot;
 
@@ -402,7 +402,7 @@ impl SignatureHelpPopover {
                     .when_some(
                         signature.parameter_documentation.clone(),
                         |this, param_doc| {
-                            this.child(div().h_px().bg(cx.theme().colors().border_variant).my_1())
+                            this.child(div().h(px(2.)).bg(cx.theme().colors().border_variant).my_1())
                                 .child(
                                     MarkdownElement::new(
                                         param_doc,
@@ -432,7 +432,7 @@ impl SignatureHelpPopover {
                         },
                     )
                     .when_some(signature.documentation.clone(), |this, description| {
-                        this.child(div().h_px().bg(cx.theme().colors().border_variant).my_1())
+                        this.child(div().h(px(2.)).bg(cx.theme().colors().border_variant).my_1())
                             .child(
                                 MarkdownElement::new(description, hover_markdown_style(window, cx))
                                     .code_block_renderer(markdown::CodeBlockRenderer::Default {
@@ -514,7 +514,7 @@ impl SignatureHelpPopover {
             .when_some(controls, |this, controls| {
                 this.children(vec![
                     div().flex().items_end().child(controls),
-                    div().w_px().bg(cx.theme().colors().border_variant),
+                    div().w(px(2.)).bg(cx.theme().colors().border_variant),
                 ])
             })
             .child(main_content)

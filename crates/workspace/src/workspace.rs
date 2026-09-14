@@ -9679,8 +9679,8 @@ impl Render for Workspace {
                             .flex()
                             .flex_col()
                             .overflow_hidden()
-                            .border_t_1()
-                            .border_b_1()
+                            .border_t_2()
+                            .border_b_2()
                             .border_color(colors.border)
                             .child({
                                 let this = cx.entity();
@@ -9790,7 +9790,7 @@ impl Render for Workspace {
                                                             h_flex()
                                                                 .flex_1()
                                                                 .when_some(paddings.0, |this, p| {
-                                                                    this.child(p.border_r_1())
+                                                                    this.child(p.border_r_2())
                                                                 })
                                                                 .child(self.render_center(
                                                                     &pane_render_context,
@@ -9800,7 +9800,7 @@ impl Render for Workspace {
                                                                 .when_some(
                                                                     paddings.1,
                                                                     |this, p| {
-                                                                        this.child(p.border_l_1())
+                                                                        this.child(p.border_l_2())
                                                                     },
                                                                 ),
                                                         ),
@@ -9853,7 +9853,7 @@ impl Render for Workspace {
                                                                             paddings.0,
                                                                             |this, p| {
                                                                                 this.child(
-                                                                                    p.border_r_1(),
+                                                                                    p.border_r_2(),
                                                                                 )
                                                                             },
                                                                         )
@@ -9866,7 +9866,7 @@ impl Render for Workspace {
                                                                             paddings.1,
                                                                             |this, p| {
                                                                                 this.child(
-                                                                                    p.border_l_1(),
+                                                                                    p.border_l_2(),
                                                                                 )
                                                                             },
                                                                         ),
@@ -9920,7 +9920,7 @@ impl Render for Workspace {
                                                                             paddings.0,
                                                                             |this, p| {
                                                                                 this.child(
-                                                                                    p.border_r_1(),
+                                                                                    p.border_r_2(),
                                                                                 )
                                                                             },
                                                                         )
@@ -9933,7 +9933,7 @@ impl Render for Workspace {
                                                                             paddings.1,
                                                                             |this, p| {
                                                                                 this.child(
-                                                                                    p.border_l_1(),
+                                                                                    p.border_l_2(),
                                                                                 )
                                                                             },
                                                                         ),
@@ -9973,7 +9973,7 @@ impl Render for Workspace {
                                                     h_flex()
                                                         .flex_1()
                                                         .when_some(paddings.0, |this, p| {
-                                                            this.child(p.border_r_1())
+                                                            this.child(p.border_r_2())
                                                         })
                                                         .child(self.render_center(
                                                             &pane_render_context,
@@ -9981,7 +9981,7 @@ impl Render for Workspace {
                                                             cx,
                                                         ))
                                                         .when_some(paddings.1, |this, p| {
-                                                            this.child(p.border_l_1())
+                                                            this.child(p.border_l_2())
                                                         }),
                                                 )
                                                 .children(self.render_dock(
@@ -10016,10 +10016,10 @@ impl Render for Workspace {
                                 }
 
                                 Some(match self.zoomed_position {
-                                    Some(DockPosition::Left) => div.right_2().border_r_1(),
-                                    Some(DockPosition::Right) => div.left_2().border_l_1(),
-                                    Some(DockPosition::Bottom) => div.top_2().border_t_1(),
-                                    None => div.top_2().bottom_2().left_2().right_2().border_1(),
+                                    Some(DockPosition::Left) => div.right_2().border_r_2(),
+                                    Some(DockPosition::Right) => div.left_2().border_l_2(),
+                                    Some(DockPosition::Bottom) => div.top_2().border_t_2(),
+                                    None => div.top_2().bottom_2().left_2().right_2().border_2(),
                                 })
                             }))
                             .children(self.render_notifications(window, cx)),
@@ -11863,7 +11863,7 @@ pub fn client_side_decorations(
     window: &mut Window,
     cx: &mut App,
 ) -> Stateful<Div> {
-    const BORDER_SIZE: Pixels = px(1.0);
+    const BORDER_SIZE: Pixels = px(2.0);
     let decorations = window.window_decorations();
     let is_resizable = window.is_resizable();
     let tiling = match decorations {
