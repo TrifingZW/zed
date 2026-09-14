@@ -40,8 +40,34 @@ function Get-VSArch {
     }
 }
 
+# Zed Vela: locate the installed Visual Studio instead of assuming VS 2022 Community,
+# so any edition, year or install location works.
+function Get-VsDevShellPath {
+    $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+
+    if (Test-Path $vswhere) {
+        $queries = @(
+            # Prefer an install that actually has the C++ build tools.
+            @("-latest", "-products", "*", "-requires", "Microsoft.VisualStudio.Component.VC.Tools.x86.x64", "-property", "installationPath"),
+            @("-latest", "-products", "*", "-property", "installationPath")
+        )
+
+        foreach ($query in $queries) {
+            $installPath = try { & $vswhere @query 2>$null | Select-Object -First 1 } catch { $null }
+            if ($installPath) {
+                $devShell = Join-Path $installPath "Common7\Tools\Launch-VsDevShell.ps1"
+                if (Test-Path $devShell) {
+                    return $devShell
+                }
+            }
+        }
+    }
+
+    throw "Launch-VsDevShell.ps1 not found. Install Visual Studio (or Build Tools) with the 'Desktop development with C++' workload."
+}
+
 Push-Location
-& "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1" -Arch (Get-VSArch -Arch $Architecture) -HostArch (Get-VSArch -Arch $OSArchitecture)
+& (Get-VsDevShellPath) -Arch (Get-VSArch -Arch $Architecture) -HostArch (Get-VSArch -Arch $OSArchitecture)
 Pop-Location
 
 $target = "$Architecture-pc-windows-msvc"
