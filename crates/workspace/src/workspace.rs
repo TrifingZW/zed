@@ -9241,7 +9241,7 @@ fn leader_border_for_pane(
             .size_full()
             .left_0()
             .top_0()
-            .border_2()
+            .border_3()
             .border_color(leader_color),
     )
 }
