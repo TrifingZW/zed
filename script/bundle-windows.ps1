@@ -286,6 +286,27 @@ function CollectFiles {
     }
 }
 
+# Zed Vela: discover ISCC.exe instead of assuming Inno Setup 6 lives at a fixed path.
+function Get-InnoSetupPath {
+    $fromPath = Get-Command "ISCC.exe" -ErrorAction SilentlyContinue
+    if ($fromPath) {
+        return $fromPath.Source
+    }
+
+    $candidates = @(
+        "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
+        "${env:ProgramFiles(x86)}\Inno Setup 5\ISCC.exe",
+        "$env:ProgramFiles\Inno Setup 6\ISCC.exe"
+    )
+    foreach ($candidate in $candidates) {
+        if (Test-Path $candidate) {
+            return $candidate
+        }
+    }
+
+    throw "ISCC.exe not found. Install Inno Setup 6 (winget install -e --id JRSoftware.InnoSetup) and re-run."
+}
+
 function BuildInstaller {
     $issFilePath = "$innoDir\zed.iss"
     switch ($channel) {
@@ -351,10 +372,7 @@ function BuildInstaller {
         }
     }
 
-    # Windows runner 2022 default has iscc in PATH, https://github.com/actions/runner-images/blob/main/images/windows/Windows2022-Readme.md
-    # Currently, we are using Windows 2022 runner.
-    # Windows runner 2025 doesn't have iscc in PATH for now, https://github.com/actions/runner-images/issues/11228
-    $innoSetupPath = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+    $innoSetupPath = Get-InnoSetupPath
 
     $definitions = @{
         "AppId"          = $appId
