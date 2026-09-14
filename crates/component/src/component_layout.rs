@@ -55,7 +55,7 @@ impl RenderOnce for ComponentExample {
                     .items_center()
                     .justify_center()
                     .rounded_xl()
-                    .border_2()
+                    .border(px(1.5))
                     .border_color(cx.theme().colors().border.opacity(0.5))
                     .bg(pattern_slash(
                         cx.theme().colors().surface_background.opacity(0.25),
@@ -128,7 +128,7 @@ impl RenderOnce for ComponentExampleGroup {
                         )
                         .child(
                             div()
-                                .h(px(2.))
+                                .h(px(1.5))
                                 .w_full()
                                 .flex_1()
                                 .bg(cx.theme().colors().border),

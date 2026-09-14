@@ -280,7 +280,7 @@ impl Render for PlatformTitleBar {
                     // this border is to avoid a transparent gap in the rounded corners
                     .mt(px(-1.))
                     .mb(px(-1.))
-                    .border(px(2.))
+                    .border(px(1.5))
                     .border_color(titlebar_color),
             })
             .bg(titlebar_color)

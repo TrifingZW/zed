@@ -232,7 +232,7 @@ impl<S: ApiCompatibleProviderSettings> Render for ApiCompatibleProviderConfigura
                 .p_1()
                 .justify_between()
                 .rounded_md()
-                .border_2()
+                .border(px(1.5))
                 .border_color(cx.theme().colors().border)
                 .bg(cx.theme().colors().background)
                 .child(

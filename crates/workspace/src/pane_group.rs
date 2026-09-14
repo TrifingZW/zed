@@ -571,7 +571,7 @@ impl Member {
                     .size_full()
                     .when(is_maximized, |this| {
                         this.bg(cx.theme().colors().background)
-                            .border_2()
+                            .border(px(1.5))
                             .border_color(cx.theme().colors().border)
                             .shadow_lg()
                             .overflow_hidden()
@@ -1158,7 +1158,7 @@ mod element {
 
     use super::{HANDLE_HITBOX_SIZE, HORIZONTAL_MIN_SIZE, VERTICAL_MIN_SIZE};
 
-    const DIVIDER_SIZE: f32 = 2.0;
+    const DIVIDER_SIZE: f32 = 1.5;
 
     pub(super) fn pane_axis(
         axis: Axis,

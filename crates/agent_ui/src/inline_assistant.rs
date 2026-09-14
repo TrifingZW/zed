@@ -637,7 +637,7 @@ impl InlineAssistant {
                     v_flex()
                         .h_full()
                         .w_full()
-                        .border_t_2()
+                        .border_t(px(1.5))
                         .border_color(cx.theme().status().info_border)
                         .into_any_element()
                 }),

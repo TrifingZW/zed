@@ -23,7 +23,7 @@ use project::Project;
 use text::Point;
 use ui::{
     ButtonCommon, Clickable, Disableable, FluentBuilder as _, IconButton, IconName,
-    StyledTypography as _, h_flex, v_flex,
+    StyledTypography as _, h_flex, px, v_flex,
 };
 
 use edit_prediction::{
@@ -283,7 +283,7 @@ impl EditPredictionContextView {
             .w_full()
             .font_buffer(cx)
             .text_xs()
-            .border_t_2()
+            .border_t(px(1.5))
             .gap_2()
             .child(v_flex().h_full().flex_1().child({
                 let t0 = run.started_at;

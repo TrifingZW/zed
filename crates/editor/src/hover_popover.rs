@@ -1419,7 +1419,7 @@ impl DiagnosticPopover {
                     .pl_2()
                     .pr_8()
                     .bg(self.background_color)
-                    .border_2()
+                    .border(px(1.5))
                     .border_color(self.border_color)
                     .rounded_lg()
                     .child(

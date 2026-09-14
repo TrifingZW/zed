@@ -71,7 +71,7 @@ impl RenderOnce for Banner {
             .when(self.wrap_content, |this| this.flex_wrap())
             .justify_between()
             .rounded_sm()
-            .border_2();
+            .border(px(1.5));
 
         let (icon, icon_color, bg_color, border_color) = match self.severity {
             Severity::Info => (

@@ -225,9 +225,9 @@ impl TableView {
                     .border_color(theme.colors().border);
 
                 if is_header {
-                    cell = cell.border_2().bg(theme.colors().border_focused)
+                    cell = cell.border(px(1.5)).bg(theme.colors().border_focused)
                 } else {
-                    cell = cell.border_2()
+                    cell = cell.border(px(1.5))
                 }
                 cell
             })

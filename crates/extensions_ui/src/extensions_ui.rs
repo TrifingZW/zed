@@ -790,7 +790,7 @@ impl ExtensionsPage {
             .pl_1p5()
             .pr_2()
             .gap_2()
-            .border_2()
+            .border(px(1.5))
             .border_color(editor_border)
             .rounded_md()
             .child(Icon::new(IconName::MagnifyingGlass).color(Color::Muted))
@@ -1464,7 +1464,7 @@ impl Render for ExtensionsPage {
                     .gap_2()
                     .py_2p5()
                     .px_4()
-                    .border_b_2()
+                    .border_b(px(1.5))
                     .border_color(cx.theme().colors().border_variant)
                     .overflow_x_scroll()
                     .child(

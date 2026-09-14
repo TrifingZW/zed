@@ -64,8 +64,8 @@ impl Render for ApiKeysWithProviders {
             .pb_0()
             .gap_2()
             .rounded_t_lg()
-            .border_t_2()
-            .border_x_2()
+            .border_t(px(1.5))
+            .border_x(px(1.5))
             .border_color(cx.theme().colors().border.opacity(0.5))
             .bg(cx.theme().colors().background.alpha(0.5))
             .shadow(vec![
@@ -79,8 +79,8 @@ impl Render for ApiKeysWithProviders {
                     .flex_wrap()
                     .rounded_t(px(5.))
                     .overflow_hidden()
-                    .border_t_2()
-                    .border_x_2()
+                    .border_t(px(1.5))
+                    .border_x(px(1.5))
                     .border_color(cx.theme().colors().border)
                     .bg(cx.theme().colors().panel_background)
                     .child(

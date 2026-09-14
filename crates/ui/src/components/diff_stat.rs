@@ -74,7 +74,7 @@ impl Component for DiffStat {
                 .py_4()
                 .w_72()
                 .justify_center()
-                .border_2()
+                .border(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .bg(cx.theme().colors().panel_background)
         };

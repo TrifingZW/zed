@@ -3,7 +3,7 @@
 //! Provides a semi-transparent overlay in the bottom-right corner showing
 //! Parsing performance metrics for developer experience.
 
-use ui::{ActiveTheme, Context, IntoElement, ParentElement, Styled, StyledTypography, div};
+use ui::{ActiveTheme, Context, IntoElement, ParentElement, Styled, StyledTypography, div, px};
 
 use crate::{PerformanceMetrics, TabularDataPreviewPane};
 
@@ -25,7 +25,7 @@ impl TabularDataPreviewPane {
             .px_3()
             .py_2()
             .bg(theme.colors().editor_background)
-            .border_2()
+            .border(px(1.5))
             .border_color(theme.colors().border)
             .rounded_md()
             .opacity(0.75)

@@ -2556,7 +2556,7 @@ impl GitGraph {
             .w_full()
             .p_1p5()
             .gap_1p5()
-            .border_b_2()
+            .border_b(px(1.5))
             .border_color(color.border_variant)
             .child(
                 h_flex()
@@ -2566,7 +2566,7 @@ impl GitGraph {
                     .px_1p5()
                     .gap_1()
                     .track_focus(&query_focus_handle)
-                    .border_2()
+                    .border(px(1.5))
                     .border_color(color.border_variant)
                     .rounded_md()
                     .bg(color.toolbar_background)
@@ -3626,7 +3626,7 @@ impl GitGraph {
             .relative()
             .h_full()
             .flex_shrink_0()
-            .w(px(2.))
+            .w(px(1.5))
             .bg(cx.theme().colors().border_variant)
             .child(
                 div()

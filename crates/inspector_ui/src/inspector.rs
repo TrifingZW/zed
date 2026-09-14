@@ -67,7 +67,7 @@ fn render_inspector(
         .bg(colors.panel_background)
         .text_color(colors.text)
         .font(ui_font)
-        .border_l_2()
+        .border_l(px(1.5))
         .border_color(colors.border)
         .child(
             h_flex()
@@ -76,7 +76,7 @@ fn render_inspector(
                 .pl_1()
                 .mt_px()
                 .h(toolbar_height)
-                .border_b_2()
+                .border_b(px(1.5))
                 .border_color(colors.border_variant)
                 .child(
                     IconButton::new("pick-mode", IconName::MagnifyingGlass)

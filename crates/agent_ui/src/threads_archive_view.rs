@@ -887,7 +887,7 @@ impl ThreadsArchiveView {
             .when(!right_window_controls, |this| this.pr_1p5())
             .gap_1()
             .justify_between()
-            .border_b_2()
+            .border_b(px(1.5))
             .border_color(cx.theme().colors().border)
             .when(traffic_lights, |this| {
                 this.child(Divider::vertical().color(ui::DividerColor::Border))
@@ -964,7 +964,7 @@ impl ThreadsArchiveView {
             .pr_1p5()
             .h(Tab::content_height(cx))
             .justify_between()
-            .border_b_2()
+            .border_b(px(1.5))
             .border_color(cx.theme().colors().border)
             .child(
                 Label::new(count_label)
@@ -1608,7 +1608,7 @@ impl PickerDelegate for ProjectPickerDelegate {
                 .p_1p5()
                 .gap_1()
                 .justify_end()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .child(
                     Button::new("open_local_folder", "Choose from Local Folders")

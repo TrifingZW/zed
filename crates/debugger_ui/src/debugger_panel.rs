@@ -689,7 +689,7 @@ impl DebugPanel {
                 .py_1()
                 .px_1p5()
                 .justify_between()
-                .border_b_2()
+                .border_b(px(1.5))
                 .border_color(cx.theme().colors().border)
                 .when(is_side, |this| this.gap_1().h(Tab::container_height(cx)))
                 .child(
@@ -1875,7 +1875,7 @@ impl Render for DebugPanel {
                                 .p_1p5()
                                 .w_full()
                                 .justify_between()
-                                .border_b_2()
+                                .border_b(px(1.5))
                                 .border_color(cx.theme().colors().border_variant)
                                 .child(Label::new("Breakpoints").size(LabelSize::Small))
                                 .child(

@@ -1331,8 +1331,8 @@ impl SettingsPageItem {
                                 .group("setting-sub-item")
                                 .mx_8()
                                 .p_4()
-                                .border_t_2()
-                                .when(is_last_sub_field, |this| this.border_b_2())
+                                .border_t(px(1.5))
+                                .when(is_last_sub_field, |this| this.border_b(px(1.5)))
                                 .when(is_last_sub_field && extra_bottom_padding, |this| {
                                     this.mb_8()
                                 })
@@ -3033,7 +3033,7 @@ impl SettingsWindow {
             .gap_1p5()
             .rounded_sm()
             .bg(cx.theme().colors().editor_background)
-            .border_2()
+            .border(px(1.5))
             .border_color(cx.theme().colors().border)
             .child(Icon::new(IconName::MagnifyingGlass).color(Color::Muted))
             .child(self.search_bar.clone())
@@ -3201,7 +3201,7 @@ impl SettingsWindow {
             .p_2p5()
             .when(cfg!(target_os = "macos"), |this| this.pt_10())
             .flex_none()
-            .border_r_2()
+            .border_r(px(1.5))
             .border_color(cx.theme().colors().border)
             .bg(cx.theme().colors().panel_background)
             .child(self.render_search(window, cx))
@@ -3290,7 +3290,7 @@ impl SettingsWindow {
                     .p_2()
                     .pb_0p5()
                     .flex_shrink_0()
-                    .border_t_2()
+                    .border_t(px(1.5))
                     .border_color(cx.theme().colors().border_variant)
                     .child(
                         KeybindingHint::new(
@@ -4606,7 +4606,8 @@ impl Render for SettingsWindow {
                         .bg(cx.theme().colors().background)
                         .text_color(cx.theme().colors().text)
                         .when(!cfg!(target_os = "macos"), |this| {
-                            this.border_t_2().border_color(cx.theme().colors().border)
+                            this.border_t(px(1.5))
+                                .border_color(cx.theme().colors().border)
                         })
                         .child(self.render_nav(window, cx))
                         .child(self.render_page(window, cx)),

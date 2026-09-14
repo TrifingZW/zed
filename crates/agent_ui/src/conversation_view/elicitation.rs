@@ -1492,7 +1492,7 @@ impl<'a> ElicitationCard<'a> {
             .mx_5()
             .my_1p5()
             .rounded_md()
-            .border_2()
+            .border(px(1.5))
             .border_color(border_color)
             .overflow_hidden()
             .child(
@@ -1657,7 +1657,7 @@ impl<'a> ElicitationCard<'a> {
             .child(match field {
                 ElicitationFieldState::Text(editor) => div()
                     .rounded_sm()
-                    .border_2()
+                    .border(px(1.5))
                     .border_color(field_border_color)
                     .bg(editor_background)
                     .px_1()
@@ -1719,7 +1719,7 @@ impl<'a> ElicitationCard<'a> {
                                 .items_start()
                                 .gap_1p5()
                                 .rounded_sm()
-                                .border_2()
+                                .border(px(1.5))
                                 .border_color(field_border_color.opacity(0.5))
                                 .bg(row_background)
                                 .px_2()
@@ -1786,7 +1786,7 @@ impl<'a> ElicitationCard<'a> {
                     .items_start()
                     .gap_1p5()
                     .rounded_sm()
-                    .border_2()
+                    .border(px(1.5))
                     .border_color(border_color.opacity(0.5))
                     .bg(row_background)
                     .px_2()
@@ -1865,7 +1865,7 @@ impl<'a> ElicitationCard<'a> {
             .items_center()
             .justify_center()
             .rounded_full()
-            .border_2()
+            .border(px(1.5))
             .border_color(border_color)
             .bg(background)
             .when(is_selected, |this| {
@@ -1972,7 +1972,7 @@ impl<'a> ElicitationCard<'a> {
             .p_1()
             .gap_1()
             .justify_end()
-            .border_t_2()
+            .border_t(px(1.5))
             .border_color(border_color)
             .child(
                 Button::new(("elicitation-accept", self.entry_ix), accept_label)

@@ -3,7 +3,7 @@ use gpui::{AppContext as _, DismissEvent, Entity, EventEmitter, Focusable, ReadG
 use ui::{
     ActiveTheme, App, Color, Context, FluentBuilder, InteractiveElement, IntoElement, Label,
     LabelCommon, LabelSize, ParentElement, Render, SharedString, StyledExt, Window, div, h_flex,
-    v_flex,
+    px, v_flex,
 };
 use workspace::ModalView;
 
@@ -90,7 +90,7 @@ impl Render for OpenUrlModal {
             .child(
                 div()
                     .p_2()
-                    .border_b_2()
+                    .border_b(px(1.5))
                     .border_color(theme.colors().border_variant)
                     .child(self.editor.clone()),
             )

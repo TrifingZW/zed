@@ -397,7 +397,7 @@ impl PickerDelegate for ColumnFilterDelegate {
                     .px_2()
                     .pt_2()
                     .pb_1()
-                    .border_t_2()
+                    .border_t(px(1.5))
                     .border_color(cx.theme().colors().border_variant)
                     .child(
                         Label::new(label.clone())
@@ -486,7 +486,7 @@ impl PickerDelegate for ColumnFilterDelegate {
                 .w_full()
                 .px_2()
                 .py_1()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .justify_between()
                 .items_center()

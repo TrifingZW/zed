@@ -195,7 +195,7 @@ impl RenderOnce for UpdateButton {
         h_flex()
             .mr_2()
             .rounded_sm()
-            .border_2()
+            .border(px(1.5))
             .border_color(border_color)
             .child(
                 ButtonLike::new(button_id)
@@ -206,7 +206,7 @@ impl RenderOnce for UpdateButton {
             )
             .when(self.show_dismiss, |this| {
                 this.child(
-                    div().border_l_2().border_color(border_color).child(
+                    div().border_l(px(1.5)).border_color(border_color).child(
                         IconButton::new(dismiss_button_id, IconName::Close)
                             .icon_size(IconSize::Indicator)
                             .when_some(self.on_dismiss, |this, handler| this.on_click(handler))

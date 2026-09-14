@@ -130,7 +130,7 @@ impl RenderOnce for ListHeader {
                         this.bg(cx.theme().colors().ghost_element_selected)
                     })
                     .when_some(self.focused, |this, focused| {
-                        this.border_2()
+                        this.border(px(1.5))
                             .when_some(self.dock, |this, dock| match dock {
                                 DockSide::Left => this.border_l_2(),
                                 DockSide::Right => this.border_r_2(),

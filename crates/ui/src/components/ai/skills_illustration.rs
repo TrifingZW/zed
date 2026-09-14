@@ -17,7 +17,7 @@ impl RenderOnce for SkillsIllustration {
                 .py_1()
                 .px_1p5()
                 .gap_1p5()
-                .border_2()
+                .border(px(1.5))
                 .border_color(cx.theme().colors().border)
                 .bg(cx.theme().colors().element_active.opacity(0.5))
                 .justify_center()

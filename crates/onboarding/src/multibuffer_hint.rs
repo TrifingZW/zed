@@ -139,7 +139,7 @@ impl Render for MultibufferHint {
             .py_0p5()
             .justify_between()
             .bg(cx.theme().status().info_background.opacity(0.5))
-            .border_2()
+            .border(px(1.5))
             .border_color(cx.theme().colors().border_variant)
             .rounded_sm()
             .overflow_hidden()

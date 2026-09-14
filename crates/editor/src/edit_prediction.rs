@@ -1234,7 +1234,7 @@ impl Editor {
             Some(prediction) => {
                 if !self.has_visible_completions_menu() {
                     const RADIUS: Pixels = px(6.);
-                    const BORDER_WIDTH: Pixels = px(2.);
+                    const BORDER_WIDTH: Pixels = px(1.5);
                     let keybind_display = self.edit_prediction_keybind_display(
                         EditPredictionKeybindSurface::CursorPopoverCompact,
                         window,
@@ -1275,7 +1275,7 @@ impl Editor {
                                     .py_1()
                                     .px_2()
                                     .rounded_r(RADIUS - BORDER_WIDTH)
-                                    .border_l_2()
+                                    .border_l(px(1.5))
                                     .border_color(cx.theme().colors().border)
                                     .bg(Self::edit_prediction_line_popover_bg_color(cx))
                                     .when(keybind_display.show_hold_label, |el| {
@@ -1390,7 +1390,7 @@ impl Editor {
                             el.child(
                                 h_flex()
                                     .h_full()
-                                    .border_l_2()
+                                    .border_l(px(1.5))
                                     .rounded_r_lg()
                                     .border_color(cx.theme().colors().border)
                                     .bg(Self::edit_prediction_line_popover_bg_color(cx))
@@ -1407,7 +1407,7 @@ impl Editor {
                             el.child(
                                 h_flex()
                                     .h_full()
-                                    .border_l_2()
+                                    .border_l(px(1.5))
                                     .rounded_r_lg()
                                     .border_color(cx.theme().colors().border)
                                     .bg(Self::edit_prediction_line_popover_bg_color(cx))
@@ -2003,7 +2003,7 @@ impl Editor {
         let styled_text = highlighted_edits.to_styled_text(&style.text);
         let line_count = highlighted_edits.text.lines().count();
 
-        const BORDER_WIDTH: Pixels = px(2.);
+        const BORDER_WIDTH: Pixels = px(1.5);
 
         let keybind = self.render_edit_prediction_keybind(window, cx);
         let has_keybind = keybind.is_some();
@@ -2252,7 +2252,7 @@ impl Editor {
             .pr(padding_right)
             .gap_1()
             .rounded_md()
-            .border_2()
+            .border(px(1.5))
             .bg(Self::edit_prediction_line_popover_bg_color(cx))
             .border_color(Self::edit_prediction_callout_popover_border_color(cx))
             .shadow_xs()
@@ -2315,7 +2315,7 @@ impl Editor {
             .px_2()
             .gap_1()
             .rounded_md()
-            .border_2()
+            .border(px(1.5))
             .bg(Self::edit_prediction_line_popover_bg_color(cx))
             .border_color(Self::edit_prediction_callout_popover_border_color(cx))
             .shadow_xs()

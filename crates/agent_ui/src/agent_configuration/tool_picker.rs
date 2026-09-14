@@ -346,7 +346,7 @@ impl PickerDelegate for ToolPickerDelegate {
                     .when(ix > 1, |this| {
                         this.mt_1()
                             .pt_2()
-                            .border_t_2()
+                            .border_t(px(1.5))
                             .border_color(cx.theme().colors().border_variant)
                     })
                     .child(

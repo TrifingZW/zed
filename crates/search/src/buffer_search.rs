@@ -308,7 +308,7 @@ impl Render for BufferSearchBar {
                 let matches_column = h_flex()
                     .pl_2()
                     .ml_2()
-                    .border_l_2()
+                    .border_l(px(1.5))
                     .border_color(theme_colors.border_variant)
                     .child(render_action_button(
                         "buffer-search-nav-button",
@@ -439,7 +439,7 @@ impl Render for BufferSearchBar {
                             .right_0()
                             .when(has_collapse_button, |this| {
                                 this.pr_2()
-                                    .border_r_2()
+                                    .border_r(px(1.5))
                                     .border_color(cx.theme().colors().border_variant)
                             })
                             .child(render_action_button(

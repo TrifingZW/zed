@@ -178,7 +178,7 @@ impl Render for StatusBar {
                         let needs_gap_fix = false;
                         if needs_gap_fix { px(-1.) } else { px(0.) }
                     })
-                    .border_b(px(2.0))
+                    .border_b(px(1.5))
                     .border_color(cx.theme().colors().status_bar_background),
             })
             .child(self.render_left_tools(&sidebar, cx))

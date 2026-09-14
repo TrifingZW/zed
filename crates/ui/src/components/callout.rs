@@ -147,8 +147,8 @@ impl RenderOnce for Callout {
             .gap_2()
             .items_start()
             .map(|this| match self.border_position {
-                CalloutBorderPosition::Top => this.border_t_2(),
-                CalloutBorderPosition::Bottom => this.border_b_2(),
+                CalloutBorderPosition::Top => this.border_t(px(1.5)),
+                CalloutBorderPosition::Bottom => this.border_b(px(1.5)),
             })
             .border_color(cx.theme().colors().border)
             .bg(bg_color)

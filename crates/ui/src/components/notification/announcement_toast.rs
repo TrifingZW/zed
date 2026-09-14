@@ -112,7 +112,7 @@ impl RenderOnce for AnnouncementToast {
                     .p_4()
                     .gap_4()
                     .when(has_illustration, |s| {
-                        s.border_t_2()
+                        s.border_t(px(1.5))
                             .border_color(cx.theme().colors().border_variant)
                     })
                     .child(

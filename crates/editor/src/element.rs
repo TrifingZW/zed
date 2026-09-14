@@ -3397,7 +3397,7 @@ impl EditorElement {
                             .top(line_height / 2.)
                             .absolute()
                             .w_full()
-                            .h(px(2.))
+                            .h(px(1.5))
                             .bg(color.border_variant),
                     ),
                 );
@@ -5112,11 +5112,11 @@ impl EditorElement {
                                 );
                                 let edges = Edges {
                                     top: if current_range.end.next_row() != new_row {
-                                        px(2.)
+                                        px(1.5)
                                     } else {
                                         px(0.)
                                     },
-                                    bottom: px(2.),
+                                    bottom: px(1.5),
                                     ..Default::default()
                                 };
                                 current_paint = Some((new_background, new_row..new_row, edges));
@@ -5127,8 +5127,8 @@ impl EditorElement {
                         }
                         None => {
                             let edges = Edges {
-                                top: px(2.),
-                                bottom: px(2.),
+                                top: px(1.5),
+                                bottom: px(1.5),
                                 ..Default::default()
                             };
                             current_paint = Some((new_background, new_row..new_row, edges))
@@ -5148,7 +5148,7 @@ impl EditorElement {
                     window.paint_quad(fill(
                         window.pixel_snap_bounds(Bounds {
                             origin: point(*guide_x, layout.position_map.text_hitbox.origin.y),
-                            size: size(px(2.), layout.position_map.text_hitbox.size.height),
+                            size: size(px(1.5), layout.position_map.text_hitbox.size.height),
                         }),
                         color,
                     ));
@@ -5394,7 +5394,7 @@ impl EditorElement {
                             hunk_bounds,
                             corner_radii,
                             flattened_unstaged_background_color,
-                            Edges::all(px(2.0)),
+                            Edges::all(px(1.5)),
                             flattened_background_color,
                             BorderStyle::Solid,
                         ));
@@ -6910,7 +6910,7 @@ pub fn render_breadcrumb_text(
         .gap_1()
         .when(multibuffer_header, |this| {
             this.pl_2()
-                .border_l_2()
+                .border_l(px(1.5))
                 .border_color(cx.theme().colors().border.opacity(0.6))
         })
         .children(breadcrumbs);
@@ -6960,7 +6960,7 @@ pub fn render_breadcrumb_text(
                                             .gap_1()
                                             .justify_between()
                                             .pt_1()
-                                            .border_t_2()
+                                            .border_t(px(1.5))
                                             .border_color(cx.theme().colors().border_variant)
                                             .child(Label::new("Right-Click to Copy Path")),
                                     )
@@ -9958,7 +9958,7 @@ struct ScrollbarLayout {
 }
 
 impl ScrollbarLayout {
-    const BORDER_WIDTH: Pixels = px(2.0);
+    const BORDER_WIDTH: Pixels = px(1.5);
     const LINE_MARKER_HEIGHT: Pixels = px(2.0);
     const MIN_MARKER_HEIGHT: Pixels = px(5.0);
     const MIN_THUMB_SIZE: Pixels = px(25.0);
@@ -10701,7 +10701,7 @@ impl HighlightedRange {
         let mut builder = if fill {
             gpui::PathBuilder::fill()
         } else {
-            gpui::PathBuilder::stroke(px(2.))
+            gpui::PathBuilder::stroke(px(1.5))
         };
         builder.move_to(first_top_right - top_curve_width);
         builder.curve_to(first_top_right + curve_height, first_top_right);

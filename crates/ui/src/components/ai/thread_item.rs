@@ -435,7 +435,7 @@ impl RenderOnce for ThreadItem {
             .py_1()
             .px_1p5()
             .when(self.selected, |s| s.bg(color.element_active))
-            .border_2()
+            .border(px(1.5))
             .border_color(gpui::transparent_black())
             .when(self.focused, |s| s.border_color(color.border_focused))
             .when(self.rounded, |s| s.rounded_sm())
@@ -653,7 +653,7 @@ impl Component for ThreadItem {
         let container = || {
             v_flex()
                 .w_72()
-                .border_2()
+                .border(px(1.5))
                 .border_color(color.border_variant)
                 .bg(bg)
         };

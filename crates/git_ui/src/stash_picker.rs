@@ -640,7 +640,7 @@ impl PickerDelegate for StashListDelegate {
                 .gap_0p5()
                 .justify_end()
                 .flex_wrap()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .child(
                     Button::new("drop-stash", "Drop")

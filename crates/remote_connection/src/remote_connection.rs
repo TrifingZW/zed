@@ -373,7 +373,7 @@ impl Render for RemoteConnectionModal {
         v_flex()
             .elevation_3(cx)
             .w(rems(34.))
-            .border_2()
+            .border(px(1.5))
             .border_color(theme.colors().border)
             .key_context("SshConnectionModal")
             .track_focus(&self.focus_handle(cx))
@@ -393,7 +393,7 @@ impl Render for RemoteConnectionModal {
                 div()
                     .w_full()
                     .bg(body_color)
-                    .border_y_2()
+                    .border_y(px(1.5))
                     .border_color(theme.colors().border_variant)
                     .child(self.prompt.clone()),
             )

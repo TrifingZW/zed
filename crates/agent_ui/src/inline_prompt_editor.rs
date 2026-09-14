@@ -158,7 +158,7 @@ impl<T: 'static> Render for PromptEditor<T> {
             .pr(right_padding)
             .gap_0p5()
             .justify_center()
-            .border_y_2()
+            .border_y(px(1.5))
             .border_color(cx.theme().colors().border)
             .bg(cx.theme().colors().editor_background)
             .child(
@@ -240,7 +240,7 @@ impl<T: 'static> Render for PromptEditor<T> {
                                 .pt(rems_from_px(3_f32))
                                 .pl_0p5()
                                 .flex_1()
-                                .border_t_2()
+                                .border_t(px(1.5))
                                 .border_color(cx.theme().colors().border_variant)
                                 .child(explanation_label),
                         ),
@@ -872,7 +872,7 @@ impl<T: 'static> PromptEditor<T> {
                             h_flex()
                                 .pl_1()
                                 .gap_1()
-                                .border_l_2()
+                                .border_l(px(1.5))
                                 .border_color(cx.theme().colors().border_variant)
                                 .child(
                                     IconButton::new("thumbs-up", IconName::ThumbsUp)

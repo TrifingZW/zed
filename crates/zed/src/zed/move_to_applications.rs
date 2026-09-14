@@ -9,7 +9,7 @@ use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, Ordering};
 use ui::{
     ActiveTheme, Color, CommonAnimationExt, Icon, IconName, IconSize, IntoElement, Label,
-    LabelCommon, LabelSize, ParentElement, Styled, StyledExt, div, h_flex, v_flex,
+    LabelCommon, LabelSize, ParentElement, Styled, StyledExt, div, h_flex, px, v_flex,
 };
 use util::ResultExt;
 use util::command::new_command;
@@ -176,7 +176,7 @@ impl Render for InstallingZedModal {
                 div()
                     .px_4()
                     .py_3()
-                    .border_b_2()
+                    .border_b(px(1.5))
                     .border_color(theme.colors().border_variant)
                     .child(Label::new("Installing Zed…")),
             )

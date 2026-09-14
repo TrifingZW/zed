@@ -35,7 +35,7 @@ use serde::Deserialize;
 use ui::{
     AnyElement, App, Color, CommonAnimationExt, Context, Headline, HeadlineSize, Icon, IconName,
     InteractiveElement, IntoElement, Label, ListItem, ListSeparator, ModalHeader, Navigable,
-    NavigableEntry, ParentElement, Render, Styled, StyledExt, Toggleable, Window, div, rems,
+    NavigableEntry, ParentElement, Render, Styled, StyledExt, Toggleable, Window, div, px, rems,
 };
 use util::ResultExt;
 use util::rel_path::RelPath;
@@ -426,7 +426,7 @@ impl PickerDelegate for TemplatePickerDelegate {
                 .p_1p5()
                 .gap_1()
                 .justify_start()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .child(
                     Button::new("run-action", "Continue")
@@ -623,7 +623,7 @@ impl PickerDelegate for FeaturePickerDelegate {
                 .p_1p5()
                 .gap_1()
                 .justify_start()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .child(
                     Button::new("run-action", "Select Feature")

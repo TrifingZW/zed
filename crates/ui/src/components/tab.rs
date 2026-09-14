@@ -148,21 +148,27 @@ impl RenderOnce for Tab {
             .map(|this| match self.position {
                 TabPosition::First => {
                     if self.selected {
-                        this.pl_px().border_r_2().pb_px()
+                        this.pl_px().border_r(px(1.5)).pb_px()
                     } else {
-                        this.pl_px().pr_px().border_b_2()
+                        this.pl_px().pr_px().border_b(px(1.5))
                     }
                 }
                 TabPosition::Last => {
                     if self.selected {
-                        this.border_l_2().border_r_2().pb_px()
+                        this.border_l(px(1.5)).border_r(px(1.5)).pb_px()
                     } else {
-                        this.pl_px().border_b_2().border_r_2()
+                        this.pl_px().border_b(px(1.5)).border_r(px(1.5))
                     }
                 }
-                TabPosition::Middle(Ordering::Equal) => this.border_l_2().border_r_2().pb_px(),
-                TabPosition::Middle(Ordering::Less) => this.border_l_2().pr_px().border_b_2(),
-                TabPosition::Middle(Ordering::Greater) => this.border_r_2().pl_px().border_b_2(),
+                TabPosition::Middle(Ordering::Equal) => {
+                    this.border_l(px(1.5)).border_r(px(1.5)).pb_px()
+                }
+                TabPosition::Middle(Ordering::Less) => {
+                    this.border_l(px(1.5)).pr_px().border_b(px(1.5))
+                }
+                TabPosition::Middle(Ordering::Greater) => {
+                    this.border_r(px(1.5)).pl_px().border_b(px(1.5))
+                }
             })
             .cursor_pointer()
             .child(

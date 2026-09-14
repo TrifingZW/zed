@@ -538,7 +538,7 @@ impl PickerDelegate for ThemeSelectorDelegate {
                 .w_full()
                 .justify_between()
                 .gap_2()
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().colors().border_variant)
                 .child(
                     Button::new("docs", "View Theme Docs")

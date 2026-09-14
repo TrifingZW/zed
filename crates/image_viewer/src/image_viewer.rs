@@ -484,7 +484,7 @@ impl Element for ImageContentElement {
                                 cx.theme().colors().panel_background,
                                 BASE_SQUARE_SIZE * zoom_level,
                             )))
-                            .border_2()
+                            .border(px(1.5))
                             .border_color(border_color),
                     )
                     .child({

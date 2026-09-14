@@ -6,7 +6,7 @@ use ui::{
     ActiveTheme, AnyElement, App, Button, Clickable, Color, Context, DynamicSpacing, Headline,
     HeadlineSize, Icon, IconName, IconSize, InteractiveElement, IntoElement, Label, LabelCommon,
     LabelSize, ParentElement, Render, SharedString, StyledExt, StyledTypography, Window, div,
-    h_flex, v_flex,
+    h_flex, px, v_flex,
 };
 use util::maybe;
 use workspace::ModalView;
@@ -89,7 +89,7 @@ impl AskPassModal {
             div()
                 .p_2()
                 .bg(color)
-                .border_t_2()
+                .border_t(px(1.5))
                 .border_color(cx.theme().status().info_border)
                 .child(
                     h_flex().gap_2()
@@ -142,7 +142,7 @@ impl Render for AskPassModal {
                     .py_2()
                     .px_3()
                     .bg(cx.theme().colors().editor_background)
-                    .border_t_2()
+                    .border_t(px(1.5))
                     .border_color(cx.theme().colors().border_variant)
                     .size_full()
                     .overflow_hidden()
