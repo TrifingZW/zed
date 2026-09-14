@@ -154,6 +154,11 @@ function BuildZedAndItsFriends {
         "preview" {
             cargo --config .cargo/bundle-config.toml build --release --features preview --no-default-features --package explorer_command_injector --target $target
         }
+        "dev" {
+            # No channel feature: the injector then uses the dev COM class id and
+            # registry key, matching AppxManifest-Dev.xml and the installer's RegValueName.
+            cargo --config .cargo/bundle-config.toml build --release --no-default-features --package explorer_command_injector --target $target
+        }
         default {
             cargo --config .cargo/bundle-config.toml build --release --package explorer_command_injector --target $target
         }
@@ -227,6 +232,9 @@ function MakeAppx {
         }
         "preview" {
             $manifestFile = "$env:ZED_WORKSPACE\crates\explorer_command_injector\AppxManifest-Preview.xml"
+        }
+        "dev" {
+            $manifestFile = "$env:ZED_WORKSPACE\crates\explorer_command_injector\AppxManifest-Dev.xml"
         }
         default {
             $manifestFile = "$env:ZED_WORKSPACE\crates\explorer_command_injector\AppxManifest-Nightly.xml"
