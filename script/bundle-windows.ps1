@@ -327,9 +327,9 @@ function BuildInstaller {
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Stable-Instance-Mutex"
             $appExeName = "ZedVela"
-            $regValueName = "Zed"
+            $regValueName = "ZedVela"
             $appUserId = "dev.zed-vela.Zed-Vela"
-            $appShellNameShort = "Z&ed"
+            $appShellNameShort = "Zed &Vela"
             $appAppxFullName = "ZedIndustries.Zed_1.0.0.0_neutral__japxn1gcva8rg"
         }
         "preview" {
@@ -341,9 +341,9 @@ function BuildInstaller {
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Preview-Instance-Mutex"
             $appExeName = "ZedVela"
-            $regValueName = "ZedPreview"
+            $regValueName = "ZedVelaPreview"
             $appUserId = "dev.zed-vela.Zed-Vela-Preview"
-            $appShellNameShort = "Z&ed Preview"
+            $appShellNameShort = "Zed &Vela Preview"
             $appAppxFullName = "ZedIndustries.Zed.Preview_1.0.0.0_neutral__japxn1gcva8rg"
         }
         "nightly" {
@@ -355,9 +355,9 @@ function BuildInstaller {
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Nightly-Instance-Mutex"
             $appExeName = "ZedVela"
-            $regValueName = "ZedNightly"
+            $regValueName = "ZedVelaNightly"
             $appUserId = "dev.zed-vela.Zed-Vela-Nightly"
-            $appShellNameShort = "Z&ed Editor Nightly"
+            $appShellNameShort = "Zed &Vela Nightly"
             $appAppxFullName = "ZedIndustries.Zed.Nightly_1.0.0.0_neutral__japxn1gcva8rg"
         }
         "dev" {
@@ -369,9 +369,9 @@ function BuildInstaller {
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Dev-Instance-Mutex"
             $appExeName = "ZedVela"
-            $regValueName = "ZedDev"
+            $regValueName = "ZedVelaDev"
             $appUserId = "dev.zed-vela.Zed-Vela-Dev"
-            $appShellNameShort = "Z&ed Dev"
+            $appShellNameShort = "Zed &Vela"
             $appAppxFullName = "ZedIndustries.Zed.Dev_1.0.0.0_neutral__japxn1gcva8rg"
         }
         default {
