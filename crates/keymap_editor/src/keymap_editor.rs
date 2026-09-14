@@ -2341,7 +2341,7 @@ impl Render for KeymapEditor {
                                             row.tooltip(Tooltip::text("This action is unbound"))
                                         }),
                                 )
-                                .border_2()
+                                .border_3()
                                 .when(
                                     conflict.is_some_and(|conflict| {
                                         conflict.is_user_keybind_conflict()

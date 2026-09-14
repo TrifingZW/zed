@@ -587,7 +587,7 @@ impl Member {
                                 .size_full()
                                 .left_0()
                                 .top_0()
-                                .border_2()
+                                .border_3()
                                 .border_color(color),
                         )
                     })
