@@ -948,7 +948,7 @@ impl Editor {
                 render: Arc::new(move |_, _, cx| {
                     div()
                         .bg(cx.theme().status().hint_background)
-                        .border_b_1()
+                        .border_b_2()
                         .size_full()
                         .font(ThemeSettings::get_global(cx).buffer_font.clone())
                         .border_color(cx.theme().status().hint)

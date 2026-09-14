@@ -2270,7 +2270,7 @@ impl Sidebar {
         if is_group_header_after_first {
             v_flex()
                 .w_full()
-                .border_t_1()
+                .border_t_2()
                 .border_color(cx.theme().colors().border)
                 .child(rendered)
                 .into_any_element()
@@ -2386,7 +2386,7 @@ impl Sidebar {
             .pl_2()
             .pr_1p5()
             .justify_between()
-            .border_1()
+            .border_2()
             .map(|this| {
                 if is_focused {
                     this.border_color(color.border_focused)
@@ -3264,7 +3264,7 @@ impl Sidebar {
             .left_0()
             .w_full()
             .bg(background)
-            .border_b_1()
+            .border_b_2()
             .border_color(color.border.opacity(0.5))
             .child(header_element)
             .shadow_sm()
@@ -7361,7 +7361,7 @@ impl Sidebar {
             .when(!right_window_controls, |this| this.pr_1p5())
             .gap_1()
             .when(!no_open_projects, |this| {
-                this.border_b_1()
+                this.border_b_2()
                     .border_color(cx.theme().colors().border)
                     .when(traffic_lights, |this| {
                         this.child(Divider::vertical().color(ui::DividerColor::Border))
@@ -7452,7 +7452,7 @@ impl Sidebar {
                                 h_flex()
                                     .pt_1()
                                     .gap_2()
-                                    .border_t_1()
+                                    .border_t_2()
                                     .border_color(cx.theme().colors().border_variant)
                                     .justify_between()
                                     .child(Label::new("Focus Sidebar"))
@@ -7478,7 +7478,7 @@ impl Sidebar {
             .p_1()
             .gap_1()
             .when(on_right, |this| this.flex_row_reverse())
-            .border_t_1()
+            .border_t_2()
             .border_color(cx.theme().colors().border)
             .child(self.render_sidebar_toggle_button(cx))
             .child(
@@ -7755,7 +7755,7 @@ fn render_import_onboarding_banner(
         .min_w_0()
         .w_full()
         .p_2()
-        .border_t_1()
+        .border_t_2()
         .border_color(cx.theme().colors().border)
         .bg(linear_gradient(
             360.,
@@ -7986,8 +7986,8 @@ impl Render for Sidebar {
                 }
             })
             .bg(bg)
-            .when(self.side(cx) == SidebarSide::Left, |el| el.border_r_1())
-            .when(self.side(cx) == SidebarSide::Right, |el| el.border_l_1())
+            .when(self.side(cx) == SidebarSide::Left, |el| el.border_r_2())
+            .when(self.side(cx) == SidebarSide::Right, |el| el.border_l_2())
             .border_color(color.border)
             .map(|this| match &self.view {
                 SidebarView::ThreadList => this
