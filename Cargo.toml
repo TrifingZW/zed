@@ -1111,7 +1111,8 @@ lto = "thin"
 codegen-units = 1
 
 [profile.release.package]
-zed = { codegen-units = 16 }
+# Zed Vela: prefer runtime performance over rebuild speed for the main binary.
+zed = { codegen-units = 1 }
 
 [profile.release-fast]
 inherits = "release"
