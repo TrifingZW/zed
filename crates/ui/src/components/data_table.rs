@@ -654,7 +654,7 @@ pub fn render_table_row(
             row.hover(|s| s.bg(cx.theme().colors().element_hover.opacity(0.6)))
         })
         .when(!is_striped && table_context.show_row_borders, |row| {
-            row.border_b_1()
+            row.border_b_2()
                 .border_color(transparent_black())
                 .when(!is_last, |row| row.border_color(cx.theme().colors().border))
         });
@@ -753,7 +753,7 @@ pub fn render_table_header(
     let outer = h_flex()
         .py_1()
         .w_full()
-        .border_b_1()
+        .border_b_2()
         .border_color(cx.theme().colors().border_variant);
 
     let use_ui_font = table_context.use_ui_font;

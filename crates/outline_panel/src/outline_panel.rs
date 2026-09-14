@@ -2944,7 +2944,7 @@ impl OutlinePanel {
                         },
                     )),
             )
-            .border_1()
+            .border_2()
             .border_r_2()
             .rounded_none()
             .hover(|style| {
@@ -5275,7 +5275,7 @@ impl OutlinePanel {
                                                 layout.offset.x * indent_size + LEFT_OFFSET,
                                                 layout.offset.y * item_height,
                                             ),
-                                            size(px(1.), layout.length * item_height),
+                                            size(px(2.), layout.length * item_height),
                                         );
                                         ui::RenderedIndentGuide {
                                             bounds,
@@ -5339,7 +5339,7 @@ impl OutlinePanel {
             .p_2()
             .h(Tab::container_height(cx))
             .justify_between()
-            .border_b_1()
+            .border_b_2()
             .border_color(cx.theme().colors().border)
             .child(
                 h_flex()
@@ -5639,7 +5639,7 @@ impl Render for OutlinePanel {
                         .px_2()
                         .h(Tab::container_height(cx))
                         .gap_0p5()
-                        .border_b_1()
+                        .border_b_2()
                         .border_color(cx.theme().colors().border_variant)
                         .child(Label::new("Searching:").color(Color::Muted))
                         .child(Label::new(query_text)),

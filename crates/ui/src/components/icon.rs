@@ -338,7 +338,7 @@ impl Component for Icon {
                                     .w_24()
                                     .p_1p5()
                                     .gap_2()
-                                    .border_1()
+                                    .border_2()
                                     .border_color(cx.theme().colors().border_variant)
                                     .bg(cx.theme().colors().element_disabled)
                                     .rounded_sm()
