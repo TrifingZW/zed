@@ -432,7 +432,7 @@ fn render_debugger_tab(
     let colors = cx.theme().colors();
 
     div()
-        .border_l_2()
+        .border_l_3()
         .border_color(gpui::transparent_black())
         .drag_over::<DraggedTab>(|wrapper, _, _, cx| wrapper.border_color(cx.theme().colors().text))
         .child(
@@ -556,7 +556,7 @@ fn render_debugger_tab_bar(
                     div()
                         .flex_1()
                         .h_6()
-                        .border_l_2()
+                        .border_l_3()
                         .border_color(gpui::transparent_black())
                         .drag_over::<DraggedTab>(|spacer, _, _, cx| {
                             spacer.border_color(cx.theme().colors().text)

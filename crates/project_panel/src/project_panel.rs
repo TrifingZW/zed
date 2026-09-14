@@ -5917,7 +5917,7 @@ impl ProjectPanel {
             .rounded_none()
             .bg(bg_color)
             .border_2()
-            .border_r_2()
+            .border_r_3()
             .border_color(border_color)
             .hover(|style| style.bg(bg_hover_color).border_color(border_hover_color))
             .when(is_sticky, |this| this.block_mouse_except_scroll())

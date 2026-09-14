@@ -7915,7 +7915,7 @@ impl GitPanel {
             .cursor_pointer()
             .hover(|style| style.bg(cx.theme().colors().ghost_element_hover))
             .border_2()
-            .border_r_2()
+            .border_r_3()
             .child(
                 h_flex()
                     .gap_1()
@@ -8343,7 +8343,7 @@ impl GitPanel {
             .pr_1()
             .gap_1p5()
             .border_2()
-            .border_r_2()
+            .border_r_3()
             .when(selected && self.focus_handle.is_focused(window), |el| {
                 el.border_color(cx.theme().colors().panel_focused_border)
             })
@@ -8570,7 +8570,7 @@ impl GitPanel {
             .gap_1p5()
             .justify_between()
             .border_2()
-            .border_r_2()
+            .border_r_3()
             .when(selected && self.focus_handle.is_focused(window), |el| {
                 el.border_color(cx.theme().colors().panel_focused_border)
             })

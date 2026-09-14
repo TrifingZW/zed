@@ -2716,7 +2716,7 @@ impl OutlinePanel {
                     )),
             )
             .border_2()
-            .border_r_2()
+            .border_r_3()
             .rounded_none()
             .hover(|style| {
                 if is_active {
