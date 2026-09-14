@@ -324,7 +324,7 @@ function BuildInstaller {
             $appIconName = "app-icon"
             $appName = "Zed Vela"
             $appDisplayName = "Zed Vela"
-            $appSetupName = "Zed-$Architecture"
+            $appSetupName = "ZedVela-$Architecture"
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Stable-Instance-Mutex"
             $appExeName = "Zed"
@@ -338,7 +338,7 @@ function BuildInstaller {
             $appIconName = "app-icon-preview"
             $appName = "Zed Vela Preview"
             $appDisplayName = "Zed Vela Preview"
-            $appSetupName = "Zed-$Architecture"
+            $appSetupName = "ZedVela-$Architecture"
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Preview-Instance-Mutex"
             $appExeName = "Zed"
@@ -352,7 +352,7 @@ function BuildInstaller {
             $appIconName = "app-icon-nightly"
             $appName = "Zed Vela Nightly"
             $appDisplayName = "Zed Vela Nightly"
-            $appSetupName = "Zed-$Architecture"
+            $appSetupName = "ZedVela-$Architecture"
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Nightly-Instance-Mutex"
             $appExeName = "Zed"
@@ -366,7 +366,7 @@ function BuildInstaller {
             $appIconName = "app-icon-dev"
             $appName = "Zed Vela"
             $appDisplayName = "Zed Vela"
-            $appSetupName = "Zed-$Architecture"
+            $appSetupName = "ZedVela-$Architecture"
             # The mutex name here should match the mutex name in crates\zed\src\zed\windows_only_instance.rs
             $appMutex = "Zed-Vela-Dev-Instance-Mutex"
             $appExeName = "Zed"
@@ -455,7 +455,7 @@ if ($buildSuccess) {
     Write-Output "Build successful"
     if ($Install) {
         Write-Output "Installing Zed..."
-        Start-Process -FilePath "$env:ZED_WORKSPACE/target/ZedEditorUserSetup-x64-$env:RELEASE_VERSION.exe"
+        Start-Process -FilePath "$env:ZED_WORKSPACE/target/ZedVela-$Architecture.exe"
     }
     exit 0
 }
