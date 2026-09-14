@@ -3,3 +3,9 @@ RUSTC_BOOTSTRAP = "1"
 
 [build]
 rustflags = ["-Z", "share-generics=y"]
+
+# Zed Vela: shave metadata from release binaries. These need RUSTC_BOOTSTRAP set above,
+# and must live in a target section because `[build] rustflags` is ignored on Windows
+# whenever a matching target rustflags entry exists.
+[target.'cfg(target_os = "windows")']
+rustflags = ["-Z", "location-detail=none", "-Z", "fmt-debug=none"]
