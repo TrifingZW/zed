@@ -10701,7 +10701,7 @@ impl HighlightedRange {
         let mut builder = if fill {
             gpui::PathBuilder::fill()
         } else {
-            gpui::PathBuilder::stroke(px(1.))
+            gpui::PathBuilder::stroke(px(2.))
         };
         builder.move_to(first_top_right - top_curve_width);
         builder.curve_to(first_top_right + curve_height, first_top_right);
