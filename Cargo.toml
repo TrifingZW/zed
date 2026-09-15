@@ -1106,7 +1106,6 @@ ui_input = { codegen-units = 1 }
 zed_actions = { codegen-units = 1 }
 
 [profile.release]
-debug = "limited"
 # Zed Vela: Maximum Optimization
 opt-level = 3
 # Zed Vela: full LTO for runtime performance (significantly slower to link).
@@ -1117,6 +1116,8 @@ codegen-units = 1
 panic = "abort"
 # Zed Vela: Strip
 strip = "symbols"
+# Zed Vela: Debug
+debug = "none"
 
 [profile.release.package]
 # Zed Vela: prefer runtime performance over rebuild speed for the main binary.
