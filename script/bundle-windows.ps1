@@ -186,13 +186,20 @@ function BuildRemoteServer {
 }
 
 function ZipZedAndItsFriendsDebug {
+    # The release profile may disable debug info (`debug = "none"`), in which case none
+    # of these exist. Filter them out so a missing .pdb cannot abort the bundle.
     $items = @(
         ".\$CargoOutDir\zed.pdb",
         ".\$CargoOutDir\cli.pdb",
         ".\$CargoOutDir\auto_update_helper.pdb",
         ".\$CargoOutDir\explorer_command_injector.pdb",
         ".\$CargoOutDir\remote_server.pdb"
-    )
+    ) | Where-Object { Test-Path $_ }
+
+    if ($items.Count -eq 0) {
+        Write-Output "No .pdb files found, skipping debug archive"
+        return
+    }
 
     Compress-Archive -Path $items -DestinationPath ".\$CargoOutDir\zed-$env:RELEASE_VERSION-$env:ZED_RELEASE_CHANNEL.dbg.zip" -Force
 }
