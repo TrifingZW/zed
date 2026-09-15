@@ -1110,6 +1110,8 @@ codegen-units = 1
 # Zed Vela: no unwinding. Note that release dev tools (remote_server) can no longer
 # catch panics, and backtraces lose their unwind frames.
 panic = "abort"
+# Zed Vela: Strip
+strip = "symbols"
 
 [profile.release.package]
 # Zed Vela: prefer runtime performance over rebuild speed for the main binary.
