@@ -1102,6 +1102,8 @@ zed_actions = { codegen-units = 1 }
 
 [profile.release]
 debug = "limited"
+# Zed Vela: Maximum Optimization
+opt-level = 3
 # Zed Vela: full LTO for runtime performance (significantly slower to link).
 lto = "fat"
 codegen-units = 1
