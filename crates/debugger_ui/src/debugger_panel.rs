@@ -1911,8 +1911,7 @@ impl Render for DebugPanel {
                                             .size_full()
                                             .child(breakpoint_list)
                                             .child(Divider::vertical().h_full())
-                                            .child(welcome_experience)
-                                            .child(Divider::vertical().h_full()),
+                                            .child(welcome_experience),
                                     )
                                 } else {
                                     this.child(
