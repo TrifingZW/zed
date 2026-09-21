@@ -151,6 +151,9 @@ impl Render for StatusBar {
             .justify_between()
             .gap(DynamicSpacing::Base08.rems(cx))
             .p(DynamicSpacing::Base04.rems(cx))
+            // Zed Vela: 1px of extra bottom padding keeps the tools in place while the 2px
+            // bottom margin below extends the bar over the 2px window border.
+            .pb(DynamicSpacing::Base04.px(cx) + px(1.))
             .bg(cx.theme().colors().status_bar_background)
             .map(|el| match window.window_decorations() {
                 Decorations::Server => el,
@@ -166,7 +169,9 @@ impl Render for StatusBar {
                         |el| el.rounded_bl(CLIENT_SIDE_DECORATION_ROUNDING),
                     )
                     // This border is to avoid a transparent gap in the rounded corners
-                    .mb(px(-1.))
+                    // Zed Vela: 2px to match the 2px window border drawn by
+                    // `client_side_decorations`.
+                    .mb(px(-2.))
                     .mt({
                         #[cfg(target_os = "linux")]
                         let needs_gap_fix = {

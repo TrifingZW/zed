@@ -7956,26 +7956,27 @@ impl Render for Sidebar {
                     Decorations::Server => el.h_full().w(self.width),
                     // With client-side decorations the sidebar owns the window
                     // corners on its side, so round them like the title bar and
-                    // status bar do. The sidebar is stretched 1px outwards over
-                    // the window border on untiled edges (with compensating
-                    // padding) so its rounded background lines up exactly with
-                    // the window shape, avoiding a transparent gap in the
-                    // rounded corners.
+                    // status bar do. The sidebar is stretched outwards over the
+                    // window border on untiled edges (with compensating padding)
+                    // so its rounded background lines up exactly with the window
+                    // shape, avoiding a transparent gap in the rounded corners.
+                    // Zed Vela: 2px to match the 2px window border drawn by
+                    // `client_side_decorations`.
                     Decorations::Client { tiling, .. } => el
                         .absolute()
-                        .top(if tiling.top { px(0.) } else { px(-1.) })
-                        .bottom(if tiling.bottom { px(0.) } else { px(-1.) })
-                        .when(!tiling.top, |el| el.pt_px())
-                        .when(!tiling.bottom, |el| el.pb_px())
+                        .top(if tiling.top { px(0.) } else { px(-2.) })
+                        .bottom(if tiling.bottom { px(0.) } else { px(-2.) })
+                        .when(!tiling.top, |el| el.pt(px(2.)))
+                        .when(!tiling.bottom, |el| el.pb(px(2.)))
                         .map(|el| {
                             if on_left {
                                 el.right(px(0.))
-                                    .left(if tiling.left { px(0.) } else { px(-1.) })
-                                    .when(!tiling.left, |el| el.pl(px(1.)))
+                                    .left(if tiling.left { px(0.) } else { px(-2.) })
+                                    .when(!tiling.left, |el| el.pl(px(2.)))
                             } else {
                                 el.left(px(0.))
-                                    .right(if tiling.right { px(0.) } else { px(-1.) })
-                                    .when(!tiling.right, |el| el.pr(px(1.)))
+                                    .right(if tiling.right { px(0.) } else { px(-2.) })
+                                    .when(!tiling.right, |el| el.pr(px(2.)))
                             }
                         })
                         .when(on_left && !(tiling.top || tiling.left), |el| {
