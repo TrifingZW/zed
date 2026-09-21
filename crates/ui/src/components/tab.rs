@@ -77,7 +77,9 @@ impl Tab {
     }
 
     pub fn content_height(cx: &App) -> Pixels {
-        DynamicSpacing::Base32.px(cx) - px(1.)
+        // Zed Vela: a tab bar's inner height, i.e. the container height minus its 2px
+        // bottom border.
+        DynamicSpacing::Base32.px(cx) - px(2.)
     }
 
     pub fn container_height(cx: &App) -> Pixels {

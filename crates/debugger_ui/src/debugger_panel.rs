@@ -1906,6 +1906,8 @@ impl Render for DebugPanel {
                             .justify_center()
                             .map(|this| {
                                 if docked_to_bottom {
+                                    // Zed Vela: upstream adds a second vertical divider after
+                                    // the welcome experience; it doubled the panel's right border.
                                     this.child(
                                         h_flex()
                                             .size_full()

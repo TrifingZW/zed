@@ -7346,9 +7346,12 @@ impl Sidebar {
 
         h_flex()
             .h(header_height)
+            // Zed Vela: with the 2px borders the header must sit flush with the top of the
+            // column for its bottom border to line up with the title bar's (upstream used a
+            // -1px top margin).
             .map(|header| match window.window_decorations() {
-                Decorations::Client { .. } => header.mt(px(-1.)),
-                Decorations::Server => header.mt_px().pb_px(),
+                Decorations::Client { .. } => header.mt(px(0.)),
+                Decorations::Server => header.mt(px(2.)).pb_px(),
             })
             .when(left_window_controls, |this| {
                 this.children(Self::render_left_window_controls(window, cx))
