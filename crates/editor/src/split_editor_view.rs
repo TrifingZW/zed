@@ -118,7 +118,7 @@ fn render_resize_handle(
         .relative()
         .h_full()
         .flex_shrink_0()
-        .w(px(2.))
+        .w(px(1.5))
         .bg(separator_color)
         .child(
             div()

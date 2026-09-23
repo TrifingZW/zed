@@ -143,7 +143,7 @@ fn render_theme_section(tab_index: &mut isize, cx: &mut App) -> impl IntoElement
                         .id(name)
                         .relative()
                         .w_full()
-                        .border_3()
+                        .border_2p5()
                         .border_color(colors.border_transparent)
                         .rounded(ThemePreviewTile::ROOT_RADIUS)
                         .map(|this| {

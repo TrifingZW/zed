@@ -1338,10 +1338,22 @@ fn border_suffixes() -> Vec<BorderStyleSuffix> {
             width_tokens: quote! { px(1.) },
             doc_string_suffix: "1px",
         },
+        // Zed Vela: shipped border widths. The app-wide border is 1.5px, with 2.5px for
+        // emphasis borders.
+        BorderStyleSuffix {
+            suffix: "1p5",
+            width_tokens: quote! { px(1.5) },
+            doc_string_suffix: "1.5px",
+        },
         BorderStyleSuffix {
             suffix: "2",
             width_tokens: quote! { px(2.) },
             doc_string_suffix: "2px",
+        },
+        BorderStyleSuffix {
+            suffix: "2p5",
+            width_tokens: quote! { px(2.5) },
+            doc_string_suffix: "2.5px",
         },
         BorderStyleSuffix {
             suffix: "3",

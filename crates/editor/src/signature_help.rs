@@ -404,7 +404,7 @@ impl SignatureHelpPopover {
                         |this, param_doc| {
                             this.child(
                                 div()
-                                    .h(px(2.))
+                                    .h(px(1.5))
                                     .bg(cx.theme().colors().border_variant)
                                     .my_1(),
                             )
@@ -436,7 +436,7 @@ impl SignatureHelpPopover {
                     .when_some(signature.documentation.clone(), |this, description| {
                         this.child(
                             div()
-                                .h(px(2.))
+                                .h(px(1.5))
                                 .bg(cx.theme().colors().border_variant)
                                 .my_1(),
                         )
@@ -520,7 +520,7 @@ impl SignatureHelpPopover {
             .when_some(controls, |this, controls| {
                 this.children(vec![
                     div().flex().items_end().child(controls),
-                    div().w(px(2.)).bg(cx.theme().colors().border_variant),
+                    div().w(px(1.5)).bg(cx.theme().colors().border_variant),
                 ])
             })
             .child(main_content)

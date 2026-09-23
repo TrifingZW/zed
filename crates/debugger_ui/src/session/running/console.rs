@@ -455,7 +455,7 @@ impl Render for Console {
             .on_action(cx.listener(Self::evaluate))
             .on_action(cx.listener(Self::watch_expression))
             .size_full()
-            .border_2()
+            .border_1p5()
             .bg(cx.theme().colors().editor_background)
             .child(self.render_console(cx))
             .when(self.is_running(cx), |this| {

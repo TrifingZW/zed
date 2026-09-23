@@ -2273,7 +2273,7 @@ impl Sidebar {
         if is_group_header_after_first {
             v_flex()
                 .w_full()
-                .border_t_2()
+                .border_t_1p5()
                 .border_color(cx.theme().colors().border)
                 .child(rendered)
                 .into_any_element()
@@ -2389,7 +2389,7 @@ impl Sidebar {
             .pl_2()
             .pr_1p5()
             .justify_between()
-            .border_2()
+            .border_1p5()
             .map(|this| {
                 if is_focused {
                     this.border_color(color.border_focused)
@@ -3267,7 +3267,7 @@ impl Sidebar {
             .left_0()
             .w_full()
             .bg(background)
-            .border_b_2()
+            .border_b_1p5()
             .border_color(color.border.opacity(0.5))
             .child(header_element)
             .shadow_sm()
@@ -7346,12 +7346,12 @@ impl Sidebar {
 
         h_flex()
             .h(header_height)
-            // Zed Vela: with the 2px borders the header must sit flush with the top of the
-            // column for its bottom border to line up with the title bar's (upstream used a
-            // -1px top margin).
+            // Zed Vela: with the 1.5px borders the header only needs a -0.5px top
+            // margin for its bottom border to line up with the title bar's (upstream
+            // used a -1px top margin for its 1px borders).
             .map(|header| match window.window_decorations() {
-                Decorations::Client { .. } => header.mt(px(0.)),
-                Decorations::Server => header.mt(px(2.)).pb_px(),
+                Decorations::Client { .. } => header.mt(px(-0.5)),
+                Decorations::Server => header.mt(px(1.5)).pb_px(),
             })
             .when(left_window_controls, |this| {
                 this.children(Self::render_left_window_controls(window, cx))
@@ -7368,7 +7368,7 @@ impl Sidebar {
             .when(!right_window_controls, |this| this.pr_1p5())
             .gap_1()
             .when(!no_open_projects, |this| {
-                this.border_b_2()
+                this.border_b_1p5()
                     .border_color(cx.theme().colors().border)
                     .when(traffic_lights, |this| {
                         this.child(Divider::vertical().color(ui::DividerColor::Border))
@@ -7459,7 +7459,7 @@ impl Sidebar {
                                 h_flex()
                                     .pt_1()
                                     .gap_2()
-                                    .border_t_2()
+                                    .border_t_1p5()
                                     .border_color(cx.theme().colors().border_variant)
                                     .justify_between()
                                     .child(Label::new("Focus Sidebar"))
@@ -7485,7 +7485,7 @@ impl Sidebar {
             .p_1()
             .gap_1()
             .when(on_right, |this| this.flex_row_reverse())
-            .border_t_2()
+            .border_t_1p5()
             .border_color(cx.theme().colors().border)
             .child(self.render_sidebar_toggle_button(cx))
             .child(
@@ -7762,7 +7762,7 @@ fn render_import_onboarding_banner(
         .min_w_0()
         .w_full()
         .p_2()
-        .border_t_2()
+        .border_t_1p5()
         .border_color(cx.theme().colors().border)
         .bg(linear_gradient(
             360.,
@@ -7960,23 +7960,23 @@ impl Render for Sidebar {
                     // window border on untiled edges (with compensating padding)
                     // so its rounded background lines up exactly with the window
                     // shape, avoiding a transparent gap in the rounded corners.
-                    // Zed Vela: 2px to match the 2px window border drawn by
+                    // Zed Vela: 1.5px to match the 1.5px window border drawn by
                     // `client_side_decorations`.
                     Decorations::Client { tiling, .. } => el
                         .absolute()
-                        .top(if tiling.top { px(0.) } else { px(-2.) })
-                        .bottom(if tiling.bottom { px(0.) } else { px(-2.) })
-                        .when(!tiling.top, |el| el.pt(px(2.)))
-                        .when(!tiling.bottom, |el| el.pb(px(2.)))
+                        .top(if tiling.top { px(0.) } else { px(-1.5) })
+                        .bottom(if tiling.bottom { px(0.) } else { px(-1.5) })
+                        .when(!tiling.top, |el| el.pt(px(1.5)))
+                        .when(!tiling.bottom, |el| el.pb(px(1.5)))
                         .map(|el| {
                             if on_left {
                                 el.right(px(0.))
-                                    .left(if tiling.left { px(0.) } else { px(-2.) })
-                                    .when(!tiling.left, |el| el.pl(px(2.)))
+                                    .left(if tiling.left { px(0.) } else { px(-1.5) })
+                                    .when(!tiling.left, |el| el.pl(px(1.5)))
                             } else {
                                 el.left(px(0.))
-                                    .right(if tiling.right { px(0.) } else { px(-2.) })
-                                    .when(!tiling.right, |el| el.pr(px(2.)))
+                                    .right(if tiling.right { px(0.) } else { px(-1.5) })
+                                    .when(!tiling.right, |el| el.pr(px(1.5)))
                             }
                         })
                         .when(on_left && !(tiling.top || tiling.left), |el| {
@@ -7994,8 +7994,8 @@ impl Render for Sidebar {
                 }
             })
             .bg(bg)
-            .when(self.side(cx) == SidebarSide::Left, |el| el.border_r_2())
-            .when(self.side(cx) == SidebarSide::Right, |el| el.border_l_2())
+            .when(self.side(cx) == SidebarSide::Left, |el| el.border_r_1p5())
+            .when(self.side(cx) == SidebarSide::Right, |el| el.border_l_1p5())
             .border_color(color.border)
             .map(|this| match &self.view {
                 SidebarView::ThreadList => this

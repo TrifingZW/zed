@@ -384,7 +384,7 @@ impl Render for SubView {
                 self.kind.to_shared_string()
             ))
             .size_full()
-            .border_2()
+            .border_1p5()
             .when(self.item_focus_handle.contains_focused(window, cx), |el| {
                 el.border_color(cx.theme().colors().pane_focused_border)
             })
@@ -413,7 +413,7 @@ impl Render for DraggedTabPreview {
             .px_1()
             .rounded_sm()
             .shadow_md()
-            .border_2()
+            .border_1p5()
             .border_color(colors.border)
             .bg(colors.elevated_surface_background)
             .child(Label::new(self.label.clone()).size(LabelSize::Small))
@@ -432,7 +432,7 @@ fn render_debugger_tab(
     let colors = cx.theme().colors();
 
     div()
-        .border_l_3()
+        .border_l_2p5()
         .border_color(gpui::transparent_black())
         .drag_over::<DraggedTab>(|wrapper, _, _, cx| wrapper.border_color(cx.theme().colors().text))
         .child(
@@ -534,7 +534,7 @@ fn render_debugger_tab_bar(
         .pl_1p5()
         .pr_1()
         .justify_between()
-        .border_b_2()
+        .border_b_1p5()
         .border_color(cx.theme().colors().border)
         .bg(cx.theme().colors().tab_bar_background)
         .child(
@@ -556,7 +556,7 @@ fn render_debugger_tab_bar(
                     div()
                         .flex_1()
                         .h_6()
-                        .border_l_3()
+                        .border_l_2p5()
                         .border_color(gpui::transparent_black())
                         .drag_over::<DraggedTab>(|spacer, _, _, cx| {
                             spacer.border_color(cx.theme().colors().text)

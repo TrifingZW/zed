@@ -100,7 +100,7 @@ impl Render for HelloWorld {
             .justify_center()
             .items_center()
             .shadow_lg()
-            .border_2()
+            .border_1p5()
             .border_color(rgb(0x0000ff))
             .text_xl()
             .text_color(rgb(0xffffff))

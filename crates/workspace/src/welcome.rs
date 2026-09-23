@@ -336,7 +336,7 @@ impl WelcomePage {
             .w_full()
             .p_2()
             .rounded_md()
-            .border_2()
+            .border_1p5()
             .border_color(color.border_variant)
             .bg(linear_gradient(
                 360.,

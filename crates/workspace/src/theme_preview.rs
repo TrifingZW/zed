@@ -315,7 +315,7 @@ impl ThemePreview {
                                     div()
                                         .size_8()
                                         .bg(color)
-                                        .border_2()
+                                        .border_1p5()
                                         .border_color(cx.theme().colors().border)
                                         .overflow_hidden(),
                                 )

@@ -1489,7 +1489,7 @@ impl<D: PickerDelegate> Picker<D> {
                 |picker| {
                     picker
                         .border_color(cx.theme().colors().border_variant)
-                        .border_b_2()
+                        .border_b_1p5()
                         .py(px(-1.0))
                 },
             )

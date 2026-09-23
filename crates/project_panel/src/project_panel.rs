@@ -6080,8 +6080,8 @@ impl ProjectPanel {
             .cursor_pointer()
             .rounded_none()
             .bg(bg_color)
-            .border_2()
-            .border_r_3()
+            .border_1p5()
+            .border_r_2p5()
             .border_color(border_color)
             .hover(|style| style.bg(bg_hover_color).border_color(border_hover_color))
             .when(is_sticky, |this| this.block_mouse_except_scroll())
@@ -6649,7 +6649,7 @@ impl ProjectPanel {
                         .right(px(-0.5))
                         .py_1()
                         .px_2()
-                        .border_2()
+                        .border_1p5()
                         .border_color(color)
                         .bg(cx.theme().colors().background)
                         .child(
@@ -7609,7 +7609,7 @@ impl Render for ProjectPanel {
                                                             layout.offset.y * item_height + offset,
                                                         ),
                                                         size(
-                                                            px(2.),
+                                                            px(1.5),
                                                             layout.length * item_height
                                                                 - offset * 2.,
                                                         ),
@@ -7692,7 +7692,7 @@ impl Render for ProjectPanel {
                                                                 layout.offset.y * item_height,
                                                             ),
                                                             size(
-                                                                px(2.),
+                                                                px(1.5),
                                                                 layout.length * item_height,
                                                             ),
                                                         );

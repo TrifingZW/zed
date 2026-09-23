@@ -384,7 +384,7 @@ impl<'a> Iterator for InlayChunks<'a> {
                                                 .absolute()
                                                 .right_1()
                                                 .size_3()
-                                                .border_2()
+                                                .border_1p5()
                                                 .border_color(
                                                     if cx.theme().appearance().is_light() {
                                                         gpui::black().opacity(0.5)

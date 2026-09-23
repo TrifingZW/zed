@@ -13061,7 +13061,7 @@ impl Render for PromptEditor {
         h_flex()
             .key_context("Editor")
             .bg(cx.theme().colors().editor_background)
-            .border_y_2()
+            .border_y_1p5()
             .border_color(cx.theme().status().info_border)
             .size_full()
             .py(window.line_height() / 2.5)

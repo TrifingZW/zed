@@ -39,9 +39,9 @@ impl ThemePreviewTile {
     pub const SIDEBAR_SKELETON_ITEM_COUNT: usize = 8;
     pub const SIDEBAR_WIDTH_DEFAULT: DefiniteLength = relative(0.25);
     pub const ROOT_RADIUS: Pixels = px(8.0);
-    pub const ROOT_BORDER: Pixels = px(2.0);
+    pub const ROOT_BORDER: Pixels = px(1.5);
     pub const ROOT_PADDING: Pixels = px(2.0);
-    pub const CHILD_BORDER: Pixels = px(2.0);
+    pub const CHILD_BORDER: Pixels = px(1.5);
 
     pub fn new(theme: Arc<Theme>, seed: f32) -> Self {
         Self {
