@@ -7483,6 +7483,13 @@ impl Sidebar {
 
         h_flex()
             .p_1()
+            // Zed Vela: the line above the status bar is the workspace border, not the
+            // status bar's own background-coloured bottom border, so this footer has to
+            // be exactly as tall as the status bar for the two borders to line up. The
+            // status bar is one pixel taller once its 0.5px of extra bottom padding and
+            // 1.5px bottom border snap to whole pixels; adding that pixel of top padding
+            // leaves the footer's contents where they were.
+            .pt(DynamicSpacing::Base04.px(cx) + px(1.))
             .gap_1()
             .when(on_right, |this| this.flex_row_reverse())
             .border_t_1p5()
