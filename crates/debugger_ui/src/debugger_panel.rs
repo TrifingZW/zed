@@ -689,7 +689,7 @@ impl DebugPanel {
                 .py_1()
                 .px_1p5()
                 .justify_between()
-                .border_b_1()
+                .border_b_2()
                 .border_color(cx.theme().colors().border)
                 .when(is_side, |this| this.gap_1().h(Tab::container_height(cx)))
                 .child(
@@ -1875,7 +1875,7 @@ impl Render for DebugPanel {
                                 .p_1p5()
                                 .w_full()
                                 .justify_between()
-                                .border_b_1()
+                                .border_b_2()
                                 .border_color(cx.theme().colors().border_variant)
                                 .child(Label::new("Breakpoints").size(LabelSize::Small))
                                 .child(
@@ -1906,13 +1906,14 @@ impl Render for DebugPanel {
                             .justify_center()
                             .map(|this| {
                                 if docked_to_bottom {
+                                    // Zed Vela: upstream adds a second vertical divider after
+                                    // the welcome experience; it doubled the panel's right border.
                                     this.child(
                                         h_flex()
                                             .size_full()
                                             .child(breakpoint_list)
                                             .child(Divider::vertical().h_full())
-                                            .child(welcome_experience)
-                                            .child(Divider::vertical().h_full()),
+                                            .child(welcome_experience),
                                     )
                                 } else {
                                     this.child(
