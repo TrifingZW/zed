@@ -348,7 +348,7 @@ pub trait RenderableCell: Render {
                     .child(
                         div()
                             .flex_none()
-                            .w(px(1.))
+                            .w(px(2.))
                             .h_full()
                             .when(is_selected, |this| this.bg(cx.theme().colors().icon_accent))
                             .when(!is_selected, |this| this.bg(cx.theme().colors().border)),
@@ -915,7 +915,7 @@ impl CodeCell {
                     .child(
                         div()
                             .flex_none()
-                            .w(px(1.))
+                            .w(px(2.))
                             .h_full()
                             .when(is_selected, |this| this.bg(cx.theme().colors().icon_accent))
                             .when(!is_selected, |this| this.bg(cx.theme().colors().border)),
@@ -1017,7 +1017,7 @@ impl RenderableCell for CodeCell {
                     .child(
                         div()
                             .flex_none()
-                            .w(px(1.))
+                            .w(px(2.))
                             .h_full()
                             .when(is_selected, |this| this.bg(cx.theme().colors().icon_accent))
                             .when(!is_selected, |this| this.bg(cx.theme().colors().border)),
@@ -1109,7 +1109,7 @@ impl Render for CodeCell {
                                 .py_3()
                                 .px_5()
                                 .rounded_lg()
-                                .border_1()
+                                .border_2()
                                 .border_color(cx.theme().colors().border)
                                 .bg(cx.theme().colors().editor_background)
                                 .child(div().w_full().child(self.editor.clone()))
@@ -1154,7 +1154,7 @@ impl Render for CodeCell {
                                         .py_3()
                                         .px_5()
                                         .rounded_lg()
-                                        .border_1()
+                                        .border_2()
                                         // execution status/time at the TOP
                                         .when(
                                             is_executing || execution_time_label.is_some(),

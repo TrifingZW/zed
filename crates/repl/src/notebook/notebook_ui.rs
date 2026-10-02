@@ -1068,7 +1068,7 @@ impl NotebookEditor {
             .rounded(px(5.))
             .bg(cx.theme().colors().title_bar_background)
             .p_px()
-            .border_1()
+            .border_2()
             .border_color(cx.theme().colors().border)
     }
 
