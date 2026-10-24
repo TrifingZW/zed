@@ -6,7 +6,7 @@ use crate::{
     thread_metadata_store::{ThreadId, ThreadMetadataStore},
 };
 use agent_client_protocol::schema::v2 as acp_v2;
-use std::{cell::RefCell, path::Path};
+use std::{cell::RefCell, path::Path, rc::Rc};
 
 use acp_thread::{
     Elicitation, ElicitationEntryId, ElicitationStatus, ForegroundActivity, OutputTokensUpdate,
@@ -7421,7 +7421,7 @@ impl ThreadView {
                                                 }))),
                                     )
                                 }
-                            }),
+                            })
                     )
                     .into_any()
             }
